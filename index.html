@@ -48,7 +48,7 @@
           }
   ).addTo(map1);
 
-  const map2 = L.map('map1').setView([39.8283, -98.5795], 5);
+  const map2 = L.map('map2').setView([39.8283, -98.5795], 5);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map2);
   const weatherLayer2 = L.tileLayer.wms(
           'https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_ndfd_windspeed_offset/MapServer/WMSServer',
@@ -60,7 +60,7 @@
           }
   ).addTo(map2);
 
-  const map3 = L.map('map1').setView([39.8283, -98.5795], 5);
+  const map3 = L.map('map3').setView([39.8283, -98.5795], 5);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map3);
   const weatherLayer3 = L.tileLayer.wms(
           'https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_relhumidity_offsets/MapServer/WMSServer',
@@ -72,7 +72,7 @@
           }
   ).addTo(map3);
 
-  const map4 = L.map('map1').setView([39.8283, -98.5795], 5);
+  const map4 = L.map('map4').setView([39.8283, -98.5795], 5);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map4);
   const weatherLayer4 = L.tileLayer.wms(
           'https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_significant_wave_height_offsets/MapServer/WMSServer',
