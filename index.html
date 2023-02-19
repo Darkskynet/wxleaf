@@ -88,6 +88,7 @@
   var map2 = L.map("map2").setView([36.8283, -98.5795], 4);
   basemap2.addTo(map2);
   var precipitation2 = L.tileLayer.wms(wms_server2, { ...wms_options2, layers: "5" }).addTo(map2);
+  var precipitation2 = L.tileLayer.wms(wms_server2, { ...wms_options2, layers: "7" }).addTo(map2);
 
   var map3 = L.map("map3").setView([36.8283, -98.5795], 4);
   basemap3.addTo(map3);
@@ -95,10 +96,6 @@
 
   var map4 = L.map("map4").setView([36.8283, -98.5795], 4);
   basemap4.addTo(map4);
-  var precipitation4 = L.tileLayer.wms(wms_server4, { ...wms_options4, layers: "7" }).addTo(map2);
-
-  var map5 = L.map("map4").setView([36.8283, -98.5795], 4);
-  basemap5.addTo(map4);
   var precipitation5 = L.tileLayer.wms(wms_server5, { ...wms_options5, layers: "7" }).addTo(map4);
 </script>
 </body>
