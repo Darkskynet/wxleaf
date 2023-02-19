@@ -56,11 +56,11 @@
     attribution: "NOAA",
   };
 
-  var wms_server3 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/wwa_meteoceanhydro_shortduration_hazards_watches_time/MapServer/WMSServer?";
+  var wms_server3 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_qpe_time/MapServer/WMSServer?";
   var wms_options3 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.5,
+    opacity: 1,
     attribution: "NOAA",
   };
 
@@ -68,7 +68,7 @@
   var wms_options4 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.9,
+    opacity: 0.4,
     attribution: "NOAA",
   };
 
@@ -94,7 +94,7 @@
   var map3 = L.map("map3").setView([36.8283, -98.5795], 4);
   basemap3.addTo(map3);
   var precipitation3a = L.tileLayer.wms(wms_server4, { ...wms_options4, layers: "7" }).addTo(map3);
-  var precipitation3b = L.tileLayer.wms(wms_server3, { ...wms_options3, layers: "0" }).addTo(map3);
+  var precipitation3b = L.tileLayer.wms(wms_server3, { ...wms_options3, layers: "1" }).addTo(map3);
 
   var map4 = L.map("map4").setView([36.8283, -98.5795], 4);
   basemap4.addTo(map4);
