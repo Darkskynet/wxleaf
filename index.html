@@ -29,50 +29,61 @@
 </div>
 
 <script>
-  const API_KEY = 'YOUR_API_KEY';
   const TILE_LAYER_URL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
   const ATTRIBUTION =
           '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors';
+  const NOWCOAST_LAYER_ID = 'RAS_RIDGE_NEXRAD';
+  const NOWCOAST_CRS = L.CRS.EPSG3857;
+  const NOWCOAST_FORMAT = 'image/png';
 
   const map1 = L.map('map1').setView([37.7749, -122.4194], 10);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map1);
-  const weatherLayer1 = L.tileLayer(
-          `https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid=${API_KEY}`,
+  const weatherLayer1 = L.tileLayer.wms(
+          'https://nowcoast.noaa.gov/arcgis/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer/WMSServer',
           {
-            attribution: '<a href="https://openweathermap.org/">OpenWeatherMap</a>',
-            layer: 'temp_new',
+            layers: NOWCOAST_LAYER_ID,
+            crs: NOWCOAST_CRS,
+            format: NOWCOAST_FORMAT,
+            transparent: true,
           }
   ).addTo(map1);
 
   const map2 = L.map('map2').setView([51.5074, -0.1278], 10);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map2);
-  const weatherLayer2 = L.tileLayer(
-          `https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid=${API_KEY}`,
+  const weatherLayer2 = L.tileLayer.wms(
+          'https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_ndfd_windspeed_offset/MapServer/WMSServer',
           {
-            attribution: '<a href="https://openweathermap.org/">OpenWeatherMap</a>',
-            layer: 'wind_new',
+            layers: NOWCOAST_LAYER_ID,
+            crs: NOWCOAST_CRS,
+            format: NOWCOAST_FORMAT,
+            transparent: true,
           }
   ).addTo(map2);
 
   const map3 = L.map('map3').setView([40.7128, -74.0060], 10);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map3);
-  const weatherLayer3 = L.tileLayer(
-          `https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid=${API_KEY}`,
+  const weatherLayer3 = L.tileLayer.wms(
+          'https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_relhumidity_offsets/MapServer/WMSServer',
           {
-            attribution: '<a href="https://openweathermap.org/">OpenWeatherMap</a>',
-            layer: 'pressure_new',
+            layers: NOWCOAST_LAYER_ID,
+            crs: NOWCOAST_CRS,
+            format: NOWCOAST_FORMAT,
+            transparent: true,
           }
   ).addTo(map3);
 
   const map4 = L.map('map4').setView([35.6895, 139.6917], 10);
   L.tileLayer(TILE_LAYER_URL, { attribution: ATTRIBUTION }).addTo(map4);
-  const weatherLayer4 = L.tileLayer(
-          `https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid=${API_KEY}`,
+  const weatherLayer4 = L.tileLayer.wms(
+          'https://nowcoast.noaa.gov/arcgis/services/nowcoast/forecast_meteoceanhydro_sfc_ndfd_significant_wave_height_offsets/MapServer/WMSServer',
           {
-            attribution: '<a href="https://openweathermap.org/">OpenWeatherMap</a>',
-            layer: 'clouds_new',
+            layers: NOWCOAST_LAYER_ID,
+            crs: NOWCOAST_CRS,
+            format: NOWCOAST_FORMAT,
+            transparent: true,
           }
   ).addTo(map4);
 </script>
-</body>
+
+  </body>
 </html>
