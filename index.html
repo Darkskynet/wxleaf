@@ -68,11 +68,11 @@
   var wms_options4 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.4,
+    opacity: 0.5,
     attribution: "NOAA",
   };
 
-  var wms_server5 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/mapoverlays_political/MapServer/WMSServer?";
+  var wms_server5 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_rtma_time/MapServer/WMSServer?";
   var wms_options5 = {
     format: "image/png",
     transparent: true,
@@ -99,7 +99,7 @@
   var map4 = L.map("map4").setView([36.8283, -98.5795], 4);
   basemap4.addTo(map4);
   var precipitation4a = L.tileLayer.wms(wms_server4, { ...wms_options4, layers: "7" }).addTo(map4);
-  var precipitation4b = L.tileLayer.wms(wms_server5, { ...wms_options5, layers: "5" }).addTo(map4);
+  var precipitation4b = L.tileLayer.wms(wms_server5, { ...wms_options5, layers: "17" }).addTo(map4);
 </script>
 </body>
 </html>
