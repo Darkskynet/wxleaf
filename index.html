@@ -11,7 +11,6 @@
 
   <style>
     .map-container {
-      display: flex;
       flex-wrap: wrap;
       width: 100%;
       height: 600px;
@@ -53,11 +52,11 @@
   var wms_options2 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.9,
+    opacity: 1,
     attribution: "NOAA",
   };
 
-  var wms_server3 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/wwa_meteoceanhydro_shortduration_hazards_watches_time/MapServer/WMSServer?";
+  var wms_server3 = "https://nowcoast.noaa.gov/arcgis/services/nowcoast/analysis_meteohydro_sfc_qpe_time/MapServer/WMSServer?";
   var wms_options3 = {
     format: "image/png",
     transparent: true,
@@ -69,7 +68,7 @@
   var wms_options4 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.5,
+    opacity: 1,
     attribution: "NOAA",
   };
 
@@ -77,7 +76,7 @@
   var wms_options5 = {
     format: "image/png",
     transparent: true,
-    opacity: 0.5,
+    opacity: 0.1,
     attribution: "NOAA",
   };
 
@@ -87,8 +86,10 @@
 
   var map2 = L.map("map2").setView([36.8283, -98.5795], 4);
   basemap2.addTo(map2);
+
   var precipitation2 = L.tileLayer.wms(wms_server2, { ...wms_options2, layers: "5" }).addTo(map2);
-  var precipitation2 = L.tileLayer.wms(wms_server4, { ...wms_options2, layers: "7" }).addTo(map2);
+  var precipitation2 = L.tileLayer.wms(wms_server4, { ...wms_options2, layers: "7", opacity: "0.5" })
+          .addTo(map2);
 
   var map3 = L.map("map3").setView([36.8283, -98.5795], 4);
   basemap3.addTo(map3);
