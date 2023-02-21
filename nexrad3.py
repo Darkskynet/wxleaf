@@ -1,29 +1,38 @@
 import requests
 import json
 # set your API token here
-token = "######################################"
+token = "qJpARinMWsbmNxjjWReUaXdxfHAkyfCG"
 # set the latitude and longitude of the location you're interested in
 ## lat = "40.730610"
 ## lon = "-73.935242"
 # set the range of dates you're interested in (in YYYY-MM-DD format)
 start_date = "2023-02-16"
-end_date = "2023-02-16"
+end_date = "2023-02-17"
 # set the product you're interested in (e.g. reflectivity, velocity, etc.)
 ##product = "NEXRAD3"
 # set the resolution of the data (either "250m" or "1km")
 resolution = "250m"
 # construct the API request URL
-url = f"https://www.ncei.noaa.gov/cdo-web/api/v2/datasets?datasetid=NEXRAD3&startdate={start_date}&enddate={end_date}"
+
+url = f"https://www.ncei.noaa.gov/cdo-web/api/v2/datasets?datasetid=NEXRAD3&locationid=KTLX&startdate={start_date}&enddate={end_date}"
+print(url)
+
+## formatted string ^^^^
+## &startdate={start_date}&enddate={end_date}
 ## &boundingbox={lon},{lat},{lon},{lat}&units=metric
+
 # make the API request
-response = requests.get(url, headers={"token": token})
+response = requests.get(url, headers={"token": token, "content-type": "application/json"})
+
 # check if the request was successful
 if response.status_code != 200:
     print(f"Request failed with status code {response.status_code}")
     print(response.text)
     exit()
+
 # parse the JSON response
 data = json.loads(response.text)
+
 # check if the "data" key is present in the response
 if "data" not in data:
     print("The 'data' key is not present in the response:")
