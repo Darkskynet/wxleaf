@@ -1,7 +1,7 @@
 import requests
 import json
 # set your API token here
-token = "qJpARinMWsbmNxjjWReUaXdxfHAkyfCG"
+token = "#################################"
 # set the latitude and longitude of the location you're interested in
 ## lat = "40.730610"
 ## lon = "-73.935242"
