@@ -12,6 +12,13 @@ end_date = "2023-02-16"
 ##product = "NEXRAD3"
 # set the resolution of the data (either "250m" or "1km")
 
+
+
+
+
+
+
+
 resolution = "250m"
 # construct the API request URL
 url = f"https://www.ncei.noaa.gov/cdo-web/api/v2/data?datasetid=NEXRAD3&startdate={start_date}&enddate={end_date}"
